@@ -4,7 +4,7 @@ export default function Contact() {
       <div className="contact-info">
         <p className="eyebrow">WE WOULD LOVE TO SEE YOU</p>
 
-        <h2>
+        <h2 className="text-danger">
           Let's Make <br />
           <span>Memories.</span>
         </h2>
@@ -16,22 +16,22 @@ export default function Contact() {
 
         <div className="contact-details">
           <div>
-            <span>VISIT US</span>
+            <span><strong>VISIT US</strong></span>
             <p>El Geish Street, Tanta, Gharbia, Egypt</p>
           </div>
 
           <div>
-            <span>CALL US</span>
+            <span><strong>CALL US</strong></span>
             <p>+20 100 123 4567</p>
           </div>
 
           <div>
-            <span>EMAIL US</span>
+            <span><strong>EMAIL US</strong></span>
             <p>hello@latavola.com</p>
           </div>
 
           <div>
-            <span>OPENING HOURS</span>
+            <span><strong>OPENING HOURS</strong></span>
             <p>Daily · 12:00 PM – 12:00 AM</p>
           </div>
         </div>
