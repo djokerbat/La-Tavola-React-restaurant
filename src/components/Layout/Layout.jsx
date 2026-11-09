@@ -1,3 +1,4 @@
+
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 import Navbar from "../Navbar/Navbar";
@@ -7,23 +8,29 @@ import Menu from "../Menu/Menu";
 import Contact from "../Contact/Contact";
 
 export default function Layout() {
-  let routers = createBrowserRouter([
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: (
+          <>
+            <Navbar />
+            <Outlet />
+          </>
+        ),
+        children: [
+          { index: true, element: <Home /> },
+          { path: "Home", element: <Home /> },
+          { path: "About", element: <About /> },
+          { path: "Menu", element: <Menu /> },
+          { path: "Contact", element: <Contact /> },
+        ],
+      },
+    ],
     {
-      path: "/",
-      element: (
-        <>
-          <Navbar />
-          <Outlet />
-        </>
-      ),
-      children: [
-        { path: "Home", element: <Home /> },
-        { path: "About", element: <About /> },
-        { path: "Menu", element: <Menu /> },
-        { path: "Contact", element: <Contact /> },
-      ],
-    },
-  ]);
+      basename: import.meta.env.BASE_URL,
+    }
+  );
 
-  return <RouterProvider router={routers} />;
+  return <RouterProvider router={router} />;
 }
